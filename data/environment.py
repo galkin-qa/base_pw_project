@@ -2,11 +2,11 @@ import os
 
 
 class Environment:
-    SHOT = 'shot'
+    STAGE = 'stage'
     PROD = 'prod'
 
     URLS = {
-        SHOT: 'https://example.ru/',
+        STAGE: 'https://example.ru/',
         PROD: 'https://www.saucedemo.com/'
     }
 
