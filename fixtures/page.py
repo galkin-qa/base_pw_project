@@ -3,7 +3,6 @@ from playwright.sync_api import Browser, BrowserContext, Page, sync_playwright
 import os
 
 
-
 def pytest_addoption(parser):
     """Пользовательские опции командной строки"""
     parser.addoption('--bn', action='store', default="chrome", help="Choose browser: chrome, remote_chrome or firefox")
@@ -13,7 +12,6 @@ def pytest_addoption(parser):
     parser.addoption('--t', action='store', default=60000, help='Choose timeout')
     parser.addoption('--l', action='store', default='ru-RU', help='Choose locale')
     # parser.addini('qs_to_api_token', default=os.getenv("QASE_TOKEN"), help='Qase app token')
-
 
 
 @pytest.fixture(scope='class')
@@ -61,7 +59,6 @@ def get_remote_chrome(playwright, request) -> Browser:
         headless=True,
         slow_mo=request.config.getoption("slow")
     )
-
 
 def get_context(browser, request, start) -> BrowserContext:
     if start == 'local':
